@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Weather
 //
-//  Created by veda jammula on 7/24/18.
+//  Created by veda jammula on 7/23/18.
 //  Copyright © 2018 Veda Jammula. All rights reserved.
 //
 
@@ -19,7 +19,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
