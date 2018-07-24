@@ -21,7 +21,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
         searchBar.delegate = self
-        updateWeatherForLocation(location: "New York")
+        updateWeatherForLocation(location: "Find Your City")
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
