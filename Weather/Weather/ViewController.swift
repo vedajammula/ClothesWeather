@@ -56,8 +56,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
-    @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var textfield: UITextField!
     @IBAction func takePhoto(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
