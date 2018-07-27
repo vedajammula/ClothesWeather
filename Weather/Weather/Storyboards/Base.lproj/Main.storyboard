@@ -111,7 +111,7 @@
         <!--Create Closet-->
         <scene sceneID="8R9-tq-uDb">
             <objects>
-                <viewController title="Create Closet" id="ZCv-52-iMN" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Closet" id="ZCv-52-iMN" customClass="CreateClosetViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="njH-us-fUQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,10 +146,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mho-Jq-9Sl">
-                                <rect key="frame" x="0.0" y="570" width="359" height="48"/>
+                                <rect key="frame" x="8" y="544" width="359" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Add to Closet"/>
+                                <connections>
+                                    <action selector="addToCloset:" destination="ZCv-52-iMN" eventType="touchUpInside" id="ieR-yb-LBx"/>
+                                    <segue destination="ZGy-xG-FAD" kind="show" identifier="addToClosetSegue" id="aGT-rE-Joa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GX7-1I-f9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4553" y="904"/>
+            <point key="canvasLocation" x="4692" y="904"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9db-rQ-gww">
@@ -185,7 +189,6 @@
         <!--Home Page-->
         <scene sceneID="GL6-W6-FiW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FSj-tv-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Home Page" id="ZGy-xG-FAD" customClass="HomePageViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YoY-Y4-4O9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -232,7 +235,7 @@
                     <navigationItem key="navigationItem" id="0C8-BD-WKp">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="VcE-wC-brK">
                             <connections>
-                                <segue destination="ZCv-52-iMN" kind="show" id="VBV-eN-dkZ"/>
+                                <segue destination="ZCv-52-iMN" kind="show" identifier="" id="VBV-eN-dkZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -240,14 +243,15 @@
                         <outlet property="collectionView" destination="kai-p7-opf" id="wBo-1T-3F4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSj-tv-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3607.1999999999998" y="904.49775112443785"/>
         </scene>
-        <!--Item-->
+        <!--Weather-->
         <scene sceneID="cBJ-mo-nqq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MIi-QN-c7J" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IcT-08-w35"/>
+                    <tabBarItem key="tabBarItem" title="Weather" id="IcT-08-w35"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jy0-qD-r7X">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -262,11 +266,11 @@
             </objects>
             <point key="canvasLocation" x="2668" y="134"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="EBK-gf-zDK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ug5-CD-pk8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5gN-6f-Fyq"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="5gN-6f-Fyq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u3f-59-RKH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -285,4 +289,8 @@
     <resources>
         <image name="Camera" width="112" height="112"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VBV-eN-dkZ"/>
+        <segue reference="aGT-rE-Joa"/>
+    </inferredMetricsTieBreakers>
 </document>
