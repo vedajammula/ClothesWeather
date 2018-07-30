@@ -57,9 +57,10 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             myImageView.image = image
             
             let newImageObject = CoreDataHelper.newImage()
-            
-            let imageData = UIImagePNGRepresentation(image)
-            newImageObject.image = imageData
+//           let imageData = UIImagePNGRepresentation(image)
+            let fixedImageOrientation = fixOrientation(img: image)
+            newImageObject.image = fixedImageOrientation.png
+//            newImageObject.image = imageData
             CoreDataHelper.saveImage()
             
         } else {
@@ -68,12 +69,22 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    private func fixOrientation(img: UIImage) -> UIImage {
+        if (img.imageOrientation == UIImageOrientation.up) { return img }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale)
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        
+        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return normalizedImage
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    
-    
     // MARK: - IBActions
     
     @IBAction func takePhoto(_ sender: Any) {
@@ -128,6 +139,18 @@ extension CreateClosetViewController: UIPickerViewDataSource, UIPickerViewDelega
         textfield.text = selectedPriority
     }
 }
+
+
+// ===========
+extension UIImage {
+    var jpeg: Data? {
+        return UIImageJPEGRepresentation(self, 1)   // QUALITY min = 0 / max = 1
+    }
+    var png: Data? {
+        return UIImagePNGRepresentation(self)
+    }
+}
+
 
 
 

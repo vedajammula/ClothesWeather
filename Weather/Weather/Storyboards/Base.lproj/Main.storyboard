@@ -118,13 +118,15 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-cY-Duv">
                                 <rect key="frame" x="8" y="20" width="359" height="334"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Rb-fAv">
                                 <rect key="frame" x="16" y="344" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Upload Image of Clothing"/>
+                                <state key="normal" title="Upload Image of Clothing">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="importImage:" destination="ZCv-52-iMN" eventType="touchUpInside" id="0Ng-ZD-oDG"/>
                                 </connections>
@@ -133,23 +135,28 @@
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Take Photo"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="ZCv-52-iMN" eventType="touchUpInside" id="fR2-Hf-pzX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYR-4G-Ay2">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose A Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYR-4G-Ay2">
                                 <rect key="frame" x="16" y="411" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" white="0.90535481766388892" alpha="0.47066566780821911" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.23974609375" alpha="0.98707726883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mho-Jq-9Sl">
                                 <rect key="frame" x="8" y="544" width="359" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Add to Closet"/>
+                                <state key="normal" title="Add to Closet">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addToCloset:" destination="ZCv-52-iMN" eventType="touchUpInside" id="ieR-yb-LBx"/>
                                     <segue destination="ZGy-xG-FAD" kind="show" identifier="addToClosetSegue" id="aGT-rE-Joa"/>
@@ -195,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kai-p7-opf">
-                                <rect key="frame" x="16" y="217" width="343" height="401"/>
+                                <rect key="frame" x="16" y="165" width="343" height="453"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pUc-Dw-aGc">
@@ -212,12 +219,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-3j-reK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="167"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-3j-reK">
+                                                    <rect key="frame" x="-0.5" y="0.0" width="165" height="167"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="OSe-3j-reK" secondAttribute="bottom" id="DYa-qI-sDy"/>
+                                            <constraint firstItem="OSe-3j-reK" firstAttribute="top" secondItem="JPj-t4-U9f" secondAttribute="top" id="MD0-Fg-oL7"/>
+                                            <constraint firstAttribute="trailing" secondItem="OSe-3j-reK" secondAttribute="trailing" constant="1" id="nl3-LN-Xfw"/>
+                                            <constraint firstItem="OSe-3j-reK" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leading" constant="-1" id="zkd-LA-gQC"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="OSe-3j-reK" id="Uun-fZ-xCN"/>
                                         </connections>
@@ -228,6 +240,13 @@
                                     <outlet property="delegate" destination="ZGy-xG-FAD" id="8DF-qG-eSJ"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Closet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-8p-HoK">
+                                <rect key="frame" x="132" y="75" width="100" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e7M-p4-7S9"/>
@@ -245,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSj-tv-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607.1999999999998" y="904.49775112443785"/>
+            <point key="canvasLocation" x="3580" y="904"/>
         </scene>
         <!--Weather-->
         <scene sceneID="cBJ-mo-nqq">
@@ -290,7 +309,6 @@
         <image name="Camera" width="112" height="112"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VBV-eN-dkZ"/>
         <segue reference="aGT-rE-Joa"/>
     </inferredMetricsTieBreakers>
 </document>

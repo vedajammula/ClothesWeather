@@ -16,13 +16,14 @@ class HomePageViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - View Life Cycle Methods
-    
+   
     override func viewDidLoad() {
         
         imageObjects = CoreDataHelper.retrieveImages()
@@ -35,7 +36,6 @@ class HomePageViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    
 
 //    func saveImage(imageName: String){
 //        //create an instance of the FileManager
@@ -63,6 +63,8 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         
         return cell
     }
+   
+
 }
 
 
