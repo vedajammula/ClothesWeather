@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,34 +117,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-cY-Duv">
-                                <rect key="frame" x="8" y="20" width="359" height="334"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-cY-Duv">
+                                <rect key="frame" x="8" y="20" width="359" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Rb-fAv">
-                                <rect key="frame" x="16" y="344" width="343" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Upload Image of Clothing">
-                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="importImage:" destination="ZCv-52-iMN" eventType="touchUpInside" id="0Ng-ZD-oDG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-iH-AeX">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhoto:" destination="ZCv-52-iMN" eventType="touchUpInside" id="fR2-Hf-pzX"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose A Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYR-4G-Ay2">
-                                <rect key="frame" x="16" y="411" width="343" height="30"/>
+                                <rect key="frame" x="16" y="436" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.90535481766388892" alpha="0.47066566780821911" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.23974609375" alpha="0.98707726883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,6 +141,28 @@
                                     <segue destination="ZGy-xG-FAD" kind="show" identifier="addToClosetSegue" id="aGT-rE-Joa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Rb-fAv">
+                                <rect key="frame" x="16" y="374" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Upload Image of Clothing">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="importImage:" destination="ZCv-52-iMN" eventType="touchUpInside" id="0Ng-ZD-oDG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-iH-AeX">
+                                <rect key="frame" x="16" y="348" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="ZCv-52-iMN" eventType="touchUpInside" id="fR2-Hf-pzX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HqV-iH-eKG"/>
@@ -173,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GX7-1I-f9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692" y="904"/>
+            <point key="canvasLocation" x="4692" y="903.59820089955031"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9db-rQ-gww">
@@ -202,18 +203,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kai-p7-opf">
-                                <rect key="frame" x="16" y="165" width="343" height="453"/>
+                                <rect key="frame" x="16" y="127" width="343" height="491"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pUc-Dw-aGc">
                                     <size key="itemSize" width="165" height="167"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="JPj-t4-U9f" customClass="ImageCollectionViewCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="167"/>
+                                        <rect key="frame" x="0.0" y="50" width="165" height="167"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="167"/>
@@ -222,19 +223,52 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-3j-reK">
                                                     <rect key="frame" x="-0.5" y="0.0" width="165" height="167"/>
                                                 </imageView>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-7h-w1B">
+                                                    <rect key="frame" x="8" y="8" width="18" height="18"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bFW-jP-Eq1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooK-9H-Gmo">
+                                                                <rect key="frame" x="2" y="2" width="14" height="14"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                <state key="normal" title="X">
+                                                                    <color key="titleColor" white="0.15215386284722221" alpha="0.98707726883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="deleteButtonDidTap:" destination="JPj-t4-U9f" eventType="touchUpInside" id="i40-Mh-zRx"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="QIp-XU-c0p"/>
+                                                        <constraint firstAttribute="height" constant="18" id="R91-De-jI3"/>
+                                                    </constraints>
+                                                    <blurEffect style="extraLight"/>
+                                                </visualEffectView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="OSe-3j-reK" secondAttribute="bottom" id="DYa-qI-sDy"/>
+                                            <constraint firstItem="dRB-7h-w1B" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leadingMargin" id="LdC-Ce-x2O"/>
                                             <constraint firstItem="OSe-3j-reK" firstAttribute="top" secondItem="JPj-t4-U9f" secondAttribute="top" id="MD0-Fg-oL7"/>
+                                            <constraint firstItem="dRB-7h-w1B" firstAttribute="top" secondItem="JPj-t4-U9f" secondAttribute="topMargin" id="P7n-5B-uWg"/>
                                             <constraint firstAttribute="trailing" secondItem="OSe-3j-reK" secondAttribute="trailing" constant="1" id="nl3-LN-Xfw"/>
                                             <constraint firstItem="OSe-3j-reK" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leading" constant="-1" id="zkd-LA-gQC"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="deleteButton" destination="ooK-9H-Gmo" id="zyp-ud-wA7"/>
+                                            <outlet property="deleteButtonBackgroundView" destination="dRB-7h-w1B" id="4Tx-ut-z3X"/>
                                             <outlet property="imageView" destination="OSe-3j-reK" id="Uun-fZ-xCN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="euk-YC-caJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="ZGy-xG-FAD" id="wLh-wM-cGa"/>
                                     <outlet property="delegate" destination="ZGy-xG-FAD" id="8DF-qG-eSJ"/>
@@ -247,6 +281,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXW-fh-hPX">
+                                <rect key="frame" x="132" y="626" width="100" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <segue destination="ZCv-52-iMN" kind="show" id="UjK-VV-081"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e7M-p4-7S9"/>
@@ -259,12 +302,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButtonBarItem" destination="JXW-fh-hPX" id="rr9-3h-C5B"/>
                         <outlet property="collectionView" destination="kai-p7-opf" id="wBo-1T-3F4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSj-tv-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3580" y="904"/>
+            <point key="canvasLocation" x="3580" y="903.59820089955031"/>
         </scene>
         <!--Weather-->
         <scene sceneID="cBJ-mo-nqq">
@@ -310,5 +354,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aGT-rE-Joa"/>
+        <segue reference="UjK-VV-081"/>
     </inferredMetricsTieBreakers>
 </document>
