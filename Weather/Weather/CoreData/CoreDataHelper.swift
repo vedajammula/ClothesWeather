@@ -8,51 +8,10 @@
 
 import UIKit
 import CoreData
-//
-//CoreDataHelper.doSomething()
-//
-//let helper = CoreDataHelper()
-//helper.doSomething()
-//
-//static func newImage() -> ImageWithAttributes {
-//    let freshImage = NSEntityDescription.insertNewObject(forEntityName: "Image", into: context) as! ImageWithAttributes
-//
-//    return freshImage
-//}
-//
-//static func saveImage() {
-//    do {
-//
-//
-//static func delete(image: Image) {
-//            context.delete(freshimage)
-//
-//
-//            saveImage()
-//        }
-//        try context.image()
-//    } catch let error {
-//        print("Could not save \(error.localizedDescription)")
-//    }
-//}
-//
-//static func retrieveImage() -> [ImageWithAttributes] {
-//    do {
-//        let fetchRequest = NSFetchRequest<ImageWithAttributes>(entityName: "ImageWithAttributes")
-//        let results = try context.fetch(fetchRequest)
-//
-//        return results
-//
-//    } catch let error {
-//        print("Could not fetch \(error.localizedDescription)")
-//
-//        return []
-//    }
-//}
 
 
 struct CoreDataHelper {
-    
+   
     static let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError()
@@ -76,6 +35,11 @@ struct CoreDataHelper {
             print("Could not save \(error.localizedDescription)")
         }
     }
+    static func delete(freshImage: ImageWithAttributes){
+        context.delete(freshImage)
+        print("deleted image")
+        saveImage()
+    }
     
     static func retrieveImages() -> [ImageWithAttributes] {
         do {
@@ -88,4 +52,7 @@ struct CoreDataHelper {
             return []
         }
     }
+    
+   
+    
 }

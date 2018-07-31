@@ -138,7 +138,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addToCloset:" destination="ZCv-52-iMN" eventType="touchUpInside" id="ieR-yb-LBx"/>
-                                    <segue destination="ZGy-xG-FAD" kind="show" identifier="addToClosetSegue" id="aGT-rE-Joa"/>
+                                    <segue destination="HXh-9n-vVQ" kind="unwind" identifier="addToClosetSegue" unwindAction="unwindWithSegue:" id="49z-JW-fTa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Rb-fAv">
@@ -173,6 +173,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GX7-1I-f9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HXh-9n-vVQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4692" y="903.59820089955031"/>
         </scene>
@@ -202,26 +203,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kai-p7-opf">
-                                <rect key="frame" x="16" y="127" width="343" height="491"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kai-p7-opf">
+                                <rect key="frame" x="16" y="120" width="343" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pUc-Dw-aGc">
-                                    <size key="itemSize" width="165" height="167"/>
+                                    <size key="itemSize" width="185" height="200"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="JPj-t4-U9f" customClass="ImageCollectionViewCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="165" height="167"/>
+                                        <rect key="frame" x="79" y="50" width="185" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-3j-reK">
-                                                    <rect key="frame" x="-0.5" y="0.0" width="165" height="167"/>
+                                                    <rect key="frame" x="-0.5" y="0.0" width="184.5" height="200"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-7h-w1B">
                                                     <rect key="frame" x="8" y="8" width="18" height="18"/>
@@ -230,7 +230,7 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooK-9H-Gmo">
-                                                                <rect key="frame" x="2" y="2" width="14" height="14"/>
+                                                                <rect key="frame" x="-7" y="-6" width="32" height="29"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                 <state key="normal" title="X">
@@ -255,8 +255,8 @@
                                             <constraint firstItem="dRB-7h-w1B" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leadingMargin" id="LdC-Ce-x2O"/>
                                             <constraint firstItem="OSe-3j-reK" firstAttribute="top" secondItem="JPj-t4-U9f" secondAttribute="top" id="MD0-Fg-oL7"/>
                                             <constraint firstItem="dRB-7h-w1B" firstAttribute="top" secondItem="JPj-t4-U9f" secondAttribute="topMargin" id="P7n-5B-uWg"/>
-                                            <constraint firstAttribute="trailing" secondItem="OSe-3j-reK" secondAttribute="trailing" constant="1" id="nl3-LN-Xfw"/>
-                                            <constraint firstItem="OSe-3j-reK" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leading" constant="-1" id="zkd-LA-gQC"/>
+                                            <constraint firstAttribute="trailing" secondItem="OSe-3j-reK" secondAttribute="trailing" id="nl3-LN-Xfw"/>
+                                            <constraint firstItem="OSe-3j-reK" firstAttribute="leading" secondItem="JPj-t4-U9f" secondAttribute="leading" id="zkd-LA-gQC"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="deleteButton" destination="ooK-9H-Gmo" id="zyp-ud-wA7"/>
@@ -274,24 +274,23 @@
                                     <outlet property="delegate" destination="ZGy-xG-FAD" id="8DF-qG-eSJ"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Closet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-8p-HoK">
-                                <rect key="frame" x="132" y="75" width="100" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Closet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-8p-HoK">
+                                <rect key="frame" x="16" y="80" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXW-fh-hPX">
-                                <rect key="frame" x="132" y="626" width="100" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Take Picture"/>
-                                <connections>
-                                    <segue destination="ZCv-52-iMN" kind="show" id="UjK-VV-081"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qLM-8p-HoK" firstAttribute="top" secondItem="e7M-p4-7S9" secondAttribute="top" constant="16" id="26g-bR-WEr"/>
+                            <constraint firstItem="e7M-p4-7S9" firstAttribute="trailing" secondItem="qLM-8p-HoK" secondAttribute="trailing" constant="16" id="4sY-9M-fsD"/>
+                            <constraint firstItem="kai-p7-opf" firstAttribute="top" secondItem="qLM-8p-HoK" secondAttribute="bottom" constant="16" id="AMj-em-v2P"/>
+                            <constraint firstItem="kai-p7-opf" firstAttribute="trailing" secondItem="e7M-p4-7S9" secondAttribute="trailing" constant="-16" id="GTl-7p-C97"/>
+                            <constraint firstItem="qLM-8p-HoK" firstAttribute="leading" secondItem="e7M-p4-7S9" secondAttribute="leading" constant="16" id="KUr-K6-fcN"/>
+                            <constraint firstItem="kai-p7-opf" firstAttribute="bottom" secondItem="e7M-p4-7S9" secondAttribute="bottom" id="UAN-vn-fop"/>
+                            <constraint firstItem="kai-p7-opf" firstAttribute="leading" secondItem="e7M-p4-7S9" secondAttribute="leading" constant="16" id="eea-15-ie0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e7M-p4-7S9"/>
                     </view>
                     <navigationItem key="navigationItem" id="0C8-BD-WKp">
@@ -302,7 +301,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButtonBarItem" destination="JXW-fh-hPX" id="rr9-3h-C5B"/>
                         <outlet property="collectionView" destination="kai-p7-opf" id="wBo-1T-3F4"/>
                     </connections>
                 </viewController>
@@ -352,8 +350,4 @@
     <resources>
         <image name="Camera" width="112" height="112"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aGT-rE-Joa"/>
-        <segue reference="UjK-VV-081"/>
-    </inferredMetricsTieBreakers>
 </document>

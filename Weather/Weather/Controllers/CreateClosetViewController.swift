@@ -20,6 +20,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     var selectedPriority : String?
     var priorityTypes = ["Shirt", "Sweater" , "Shorts", "Jeans", "Dress", "Jewlrey", "Shoes", "Other"]
     
+   
     
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {

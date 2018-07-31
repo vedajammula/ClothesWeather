@@ -21,12 +21,16 @@ class HomePageViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var addButtonBarItem: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+        
+    }
     
     // MARK: - View Life Cycle Methods
    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         imageObjects = CoreDataHelper.retrieveImages()
         navigationItem.leftBarButtonItem = editButtonItem
@@ -36,7 +40,7 @@ class HomePageViewController: UIViewController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        addButtonBarItem.isEnabled = !editing
+        //addButtonBarItem.isEnabled = !editing
         editModeOn = !editModeOn
         collectionView.reloadData()
 //        if let indexPaths = collectionView?.indexPathsForVisibleItems {
@@ -62,6 +66,8 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
         cell.isEditing = self.editModeOn
         cell.imageView.image = UIImage(data: imageObjects[indexPath.row].image!)
+        // Cell imageview content mode down below
+        cell.imageView.contentMode = .scaleAspectFill
         cell.indexPath = indexPath
         cell.delegate = self
         return cell
@@ -72,8 +78,12 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension HomePageViewController : ImageCollectionViewCellDelegate {
     func delete(indexPath: IndexPath) {
+        CoreDataHelper.delete(freshImage: imageObjects[indexPath.item])
         imageObjects.remove(at: indexPath.row)
+        print("Pressed delete")
         collectionView.reloadData()
+        CoreDataHelper.saveImage()
+    
     }
     
 //    func delete(cell: ImageCollectionViewCell) {
