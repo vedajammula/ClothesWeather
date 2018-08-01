@@ -23,17 +23,23 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
- // @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
-    }
+//    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+//
+//    }
     
     // MARK: - View Life Cycle Methods
    
-    override func viewDidLoad() {
+//    override func viewDidLoad() {
+//
+//        super.viewDidLoad()
+//
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        super.viewDidLoad()
         imageObjects = CoreDataHelper.retrieveImages()
         navigationItem.leftBarButtonItem = editButtonItem
-        
     }
     //MARK: - Delete Items
     
@@ -50,11 +56,9 @@ class HomePageViewController: UIViewController {
 //            }
 //        }
     }
-
-
     
     // MARK: - IBActions
-
+}
 
 // MARK: - CollectionView Delegate & DataSource Methods
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
