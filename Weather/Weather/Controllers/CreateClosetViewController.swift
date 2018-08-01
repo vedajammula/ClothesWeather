@@ -21,7 +21,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     var priorityTypes = ["Shirt", "Sweater" , "Shorts", "Jeans", "Dress", "Jewlrey", "Shoes", "Other"]
     
    
-    
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
         
@@ -40,7 +39,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
     }
     
-    
     func dismissPickerView() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -51,7 +49,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
         textfield.inputAccessoryView = toolBar
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -109,7 +106,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
         CoreDataHelper.saveImage()
         self.performSegue(withIdentifier: "addToClosetSegue", sender: nil)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -117,7 +113,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             let destinationVC = segue.destination as! HomePageViewController
         }
     }
-    
 }
 
 // MARK: - PickerView Delegate & DataSource Methods
@@ -140,8 +135,6 @@ extension CreateClosetViewController: UIPickerViewDataSource, UIPickerViewDelega
         textfield.text = selectedPriority
     }
 }
-
-
 // ===========
 extension UIImage {
     var jpeg: Data? {
@@ -151,15 +144,4 @@ extension UIImage {
         return UIImagePNGRepresentation(self)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
