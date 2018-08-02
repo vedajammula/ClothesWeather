@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="2620" y="-603"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Page View Controller-->
         <scene sceneID="M4e-Ul-LHL">
             <objects>
-                <viewController id="x4J-jP-gqA" sceneMemberID="viewController">
+                <viewController id="x4J-jP-gqA" customClass="RegisterPageViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Mp-cJ-MlS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,6 +156,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="x4J-jP-gqA" eventType="touchUpInside" id="uxb-3k-bwE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9W-em-l6g">
                                 <rect key="frame" x="79" y="522" width="217" height="30"/>
@@ -166,6 +169,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HCx-Zy-YQi"/>
                     </view>
+                    <connections>
+                        <outlet property="repeatPasswordTextField" destination="SWs-co-DdV" id="DVF-Q0-QQh"/>
+                        <outlet property="userEmailTextField" destination="Vn3-0h-CNG" id="cgO-Wh-Wci"/>
+                        <outlet property="userPasswordTextField" destination="iWa-sG-xAH" id="icL-yj-VMb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPr-Mq-Kd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="3580" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Final Outfit View Controller-->
         <scene sceneID="l9S-l5-Pds">
             <objects>
-                <viewController id="uIk-Di-3ij" sceneMemberID="viewController">
+                <viewController id="uIk-Di-3ij" customClass="FinalOutfitViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vF1-Qi-2V6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
