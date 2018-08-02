@@ -55,14 +55,17 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            myImageView.image = image
-            
-            let newImageObject = CoreDataHelper.newImage()
-//           let imageData = UIImagePNGRepresentation(image)
             let fixedImageOrientation = fixOrientation(img: image)
-            newImageObject.image = fixedImageOrientation.png
+            
+            myImageView.image = fixedImageOrientation
+            receivedImage = fixedImageOrientation
+            
+//            let newImageObject = CoreDataHelper.newImage()
+//           let imageData = UIImagePNGRepresentation(image)
+//            newImageObject.image = fixedImageOrientation.png
+        //    newImageObject.category = textfield.text
 //            newImageObject.image = imageData
-            CoreDataHelper.saveImage()
+//            CoreDataHelper.save()
             
         } else {
             //error message
@@ -107,12 +110,27 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     
     @IBAction func addToCloset(_ sender: Any) {
         
-        CoreDataHelper.saveImage()
-     //   self.performSegue(withIdentifier: "addToClosetSegue", sender: nil)
-//        presentingViewController?.dismiss(animated: true, completion: nil)
-        self.navigationController?.popViewController(animated: true)
-        print("Pressed Add to Closet")
-        
+        if receivedImage == nil {
+            //TODO: use this class, UIAlertController, to send a message to the user
+//            let alert
+        } else if selectedPriority == nil {
+            //TODO: use this class, UIAlertController, to send a message to the user
+            //            let alert
+        } else {
+            
+            let newImage = CoreDataHelper.newImage()
+            guard let imageData = receivedImage!.png else {
+                fatalError("failed to convert receivedImage into data")
+            }
+            newImage.image = imageData
+            newImage.category = selectedPriority!
+                
+            CoreDataHelper.save()
+            //   self.performSegue(withIdentifier: "addToClosetSegue", sender: nil)
+            //        presentingViewController?.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+            print("Pressed Add to Closet")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

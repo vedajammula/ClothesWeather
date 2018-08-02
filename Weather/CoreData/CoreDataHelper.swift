@@ -28,7 +28,7 @@ struct CoreDataHelper {
         return image
     }
     
-    static func saveImage() {
+    static func save() {
         do {
             try context.save()
         } catch let error {
@@ -38,7 +38,7 @@ struct CoreDataHelper {
     static func delete(freshImage: ImageWithAttributes){
         context.delete(freshImage)
         print("deleted image")
-        saveImage()
+        save()
     }
     
     static func retrieveImages() -> [ImageWithAttributes] {

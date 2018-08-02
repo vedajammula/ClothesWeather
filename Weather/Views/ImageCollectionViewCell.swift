@@ -28,6 +28,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         
         delegate?.delete(indexPath: indexPath!)
     }
+    
     @IBOutlet weak var deleteButtonBackgroundView: UIVisualEffectView!
     @IBOutlet weak var imageView: UIImageView!
     
