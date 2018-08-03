@@ -8,15 +8,45 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 
 class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
-
+    //    @IBAction func unwindFromWeather(_ sender: UIStoryboardSegue)
+    //
+    //    if sender.source is HomePageViewController {
+    //         if let senderVC = sender.source as? HomePageViewController
+    //
+    //    }
+    
+    //    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+    //       let data = CoreDataHelper.retrieveData()
+    //    }
+    //
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        guard let identifier = segue.identifier else { return }
+    //
+    //        switch identifier {
+    //        case "displayData":
+    //            // guard let indexPath = tableView.indexPathForSelectedRow else { return }
+    //
+    //            // 2
+    //            let d = x        // data[indexPath.row]
+    //            // 3
+    //            let destination = segue.destination as! HomePageViewController
+    //            // 4
+    //            destination.data = d
+    //
+    //        default:
+    //            print("unexpected segue identifier")
+    //        }
+    //    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var forecastData = [Weather] ()
     
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+  //  @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +124,13 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
         cell.imageView?.image = UIImage(named: weatherObject.icon)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let weather = forecastData[indexPath.section]
+        
+        Weather.setCurrentWeather(weather: weather)
     }
     
     /*

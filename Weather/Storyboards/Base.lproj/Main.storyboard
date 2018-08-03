@@ -276,16 +276,23 @@
                             <outlet property="delegate" destination="AsI-Bz-6fV" id="wqA-AR-7kv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weather" id="GaJ-Cl-EAX"/>
+                    <navigationItem key="navigationItem" title="Weather" id="GaJ-Cl-EAX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="le6-Jr-M5d">
+                            <connections>
+                                <segue destination="XTk-g8-rEF" kind="unwind" unwindAction="unwindFromWeather:" id="TvA-YE-kCa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="1gs-7p-H7j" id="8lS-Yj-E7l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWG-zX-DbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XTk-g8-rEF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="252"/>
+            <point key="canvasLocation" x="2668" y="209"/>
         </scene>
-        <!--Final Outfit View Controller-->
+        <!--Outfit-->
         <scene sceneID="l9S-l5-Pds">
             <objects>
                 <viewController id="uIk-Di-3ij" customClass="FinalOutfitViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -326,6 +333,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qSa-Tg-u6l"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Outfit" id="I6C-g6-40Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovI-Gv-Y4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -425,6 +433,7 @@
                     <connections>
                         <segue destination="ug5-CD-pk8" kind="relationship" relationship="viewControllers" id="bDt-sg-VEa"/>
                         <segue destination="MIi-QN-c7J" kind="relationship" relationship="viewControllers" id="4RY-EC-Gxs"/>
+                        <segue destination="uIk-Di-3ij" kind="relationship" relationship="viewControllers" id="7XM-D3-laN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uki-nk-4gW" userLabel="First Responder" sceneMemberID="firstResponder"/>

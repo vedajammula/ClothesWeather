@@ -11,5 +11,9 @@ import UIKit
 
 class FinalOutfitViewController: UIViewController {
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       let current = Weather.current
+    }
 }

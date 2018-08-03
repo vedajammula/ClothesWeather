@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct Weather {
+struct Weather: Codable {
     let summary:String
     let icon:String
     let temperature:Double
@@ -18,6 +18,13 @@ struct Weather {
         case missing(String)
         case invalid(String, Any)
     }
+    
+    init(summary: String, temperature: Double, icon: String) {
+        self.summary = summary
+        self.temperature = temperature
+        self.icon = icon
+    }
+    
     
     
     init(json:[String:Any]) throws {
@@ -53,6 +60,7 @@ struct Weather {
                             if let dailyData = dailyForecasts["data"] as? [[String:Any]] {
                                 for dataPoint in dailyData {
                                     if let weatherObject = try? Weather(json: dataPoint) {
+                                        print(weatherObject)
                                         forecastArray.append(weatherObject)
                                     }
                                 }
@@ -65,23 +73,27 @@ struct Weather {
                 }
                 
                 completion(forecastArray)
-                
             }
-            
-            
         }
         
         task.resume()
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     
+    static func setCurrentWeather(weather: Weather){
+       
+        let weatherData = try! JSONEncoder().encode(weather)
+        
+        UserDefaults.standard.setValue(weatherData, forKey: "Weather")
+    }
+    static var current:  Weather?  {
+        if UserDefaults.standard.value(forKey: "Weather") != nil{
+        let weatherData = UserDefaults.standard.value(forKey: "Weather") as! Data
+        let weather = try! JSONDecoder().decode(Weather.self, from: weatherData)
+        return weather
+        }
+        else{
+            return nil
+        }
+    }
     
 }
