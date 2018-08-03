@@ -20,8 +20,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     var selectedPriority : String?
     var priorityTypes = ["Shirt", "Sweater" , "Shorts", "Jeans", "Dress", "Jewlrey", "Shoes", "Other"]
     
-   
-    
+
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
         
@@ -29,7 +28,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         createPickerView()
         dismissPickerView()
     }
-    
     // MARK: - Methods
     
     func createPickerView() {
@@ -39,7 +37,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         textfield.inputView = pickerView
         
     }
-    
     
     func dismissPickerView() {
         let toolBar = UIToolbar()
@@ -107,7 +104,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         image.allowsEditing = false
         self.present(image, animated: true)
     }
-    
     @IBAction func addToCloset(_ sender: Any) {
         
         if receivedImage == nil {
@@ -117,14 +113,13 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             //TODO: use this class, UIAlertController, to send a message to the user
             //            let alert
         } else {
-            
             let newImage = CoreDataHelper.newImage()
             guard let imageData = receivedImage!.png else {
                 fatalError("failed to convert receivedImage into data")
             }
             newImage.image = imageData
             newImage.category = selectedPriority!
-                
+
             CoreDataHelper.save()
             //   self.performSegue(withIdentifier: "addToClosetSegue", sender: nil)
             //        presentingViewController?.dismiss(animated: true, completion: nil)
@@ -132,15 +127,12 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             print("Pressed Add to Closet")
         }
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addToClosetSegue" {
             let destinationVC = segue.destination as! HomePageViewController
         }
     }
-    
 }
-
 // MARK: - PickerView Delegate & DataSource Methods
 extension CreateClosetViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -161,8 +153,6 @@ extension CreateClosetViewController: UIPickerViewDataSource, UIPickerViewDelega
         textfield.text = selectedPriority
     }
 }
-
-
 // ===========
 extension UIImage {
     var jpeg: Data? {

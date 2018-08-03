@@ -16,6 +16,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
     
     var forecastData = [Weather] ()
     
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,6 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
         if let locationString = searchBar.text , !locationString.isEmpty {
             
             updateWeatherForLocation(location: locationString)
-            
-            
             
         }
     }
@@ -50,8 +49,6 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
             
-            
-            
         }
         
     }
@@ -60,6 +57,11 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

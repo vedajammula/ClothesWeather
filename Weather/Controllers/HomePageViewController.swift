@@ -82,6 +82,22 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return categoriesArray[row]
     }
     
+    // create segue
+    // if temperature > 70 {
+    // display object from categoriesArray into the UiImage in Your Outfit View Controller
+    // else if temperature < 80 {
+    // display sweater object from categoriesArray into the UIImage in Your OUtfit View Controller
+//     
+//
+//
+//
+//
+//
+    //}
+    
+    
+    
+    
 
     
     // MARK: - IBOutlets
@@ -101,12 +117,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 //
 //    }
     
-    
-    
-    
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
