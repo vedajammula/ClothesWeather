@@ -327,6 +327,12 @@
                         <viewLayoutGuide key="safeArea" id="qSa-Tg-u6l"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Outfit" image="hanger" id="I6C-g6-40Y"/>
+                    <connections>
+                        <outlet property="bottomImageView" destination="O2o-eH-NDk" id="Cpu-AO-c3Y"/>
+                        <outlet property="jewlreyImageView" destination="wzs-jL-3RR" id="hdk-5q-nge"/>
+                        <outlet property="otherImageView" destination="dTo-GF-hk7" id="N7D-OA-dPv"/>
+                        <outlet property="topImageView" destination="hHc-lX-efL" id="o5u-WG-HBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovI-Gv-Y4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -564,7 +570,7 @@
         <scene sceneID="cBJ-mo-nqq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MIi-QN-c7J" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Weather" id="IcT-08-w35"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="sun" id="IcT-08-w35"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jy0-qD-r7X">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -622,6 +628,7 @@
         <image name="camera" width="873" height="666"/>
         <image name="hanger" width="50" height="26"/>
         <image name="home" width="25" height="25"/>
+        <image name="sun" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vL9-9n-X1c"/>

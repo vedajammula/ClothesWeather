@@ -17,6 +17,15 @@ class FinalOutfitViewController: UIViewController {
     var locManager = CLLocationManager()
     var images = [ImageWithAttributes]()
     
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var bottomImageView: UIImageView!
+    
+    @IBOutlet weak var jewlreyImageView: UIImageView!
+    @IBOutlet weak var otherImageView: UIImageView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locManager.requestWhenInUseAuthorization()
@@ -33,7 +42,11 @@ class FinalOutfitViewController: UIViewController {
         images = CoreDataHelper.retrieveImages()
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkTemperature()
+    }
+    
     func weatherForLocation(location: CLLocation) {
         Weather.forecast(withLocation: location.coordinate, completion: { (results: [Weather]?) in
             if let weatherData = results {
@@ -47,11 +60,25 @@ class FinalOutfitViewController: UIViewController {
     }
     func checkTemperature() {
         guard let temp = temp else { return }
-        if temp < 40.0 && temp > 50.0 {
+        
+        // sweather range
+        if temp < 100.0 && temp > 40.0 {
+            let top = CoreDataHelper.retrieveImages()
+            let sweater = top.filter({$0.category == "Sweater"})
+            if !sweater.isEmpty{
+            let index = arc4random_uniform(UInt32(sweater.count))
+            let imageData = sweater[Int(index)]
+                let image = UIImage(data: imageData.image!)
+                topImageView.image = image
+            }
             
+            else {
+                //create alert view
+            }
             //display sweater image
             //display jeans image
         }
+ //       else if {}
     }
    
     
