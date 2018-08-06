@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F4973F5210A5A6E00549D8E /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4973F4210A5A6E00549D8E /* CoreDataHelper.swift */; };
 		1F4973F9210A72EA00549D8E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4973F8210A72EA00549D8E /* ImageCollectionViewCell.swift */; };
+		1F5E0DD82118FF2000C4CAA6 /* s.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5E0DD72118FF2000C4CAA6 /* s.xcassets */; };
 		1F6D925E2107C02A00BBD09D /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D925D2107C02A00BBD09D /* WeatherTableViewController.swift */; };
 		1F6D92602107C29600BBD09D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D925F2107C29600BBD09D /* Weather.swift */; };
 		1FB85F47211275890009E6DE /* CreateAnAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB85F46211275890009E6DE /* CreateAnAccountController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		1F4973F4210A5A6E00549D8E /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		1F4973F8210A72EA00549D8E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F5E0DD72118FF2000C4CAA6 /* s.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = s.xcassets; sourceTree = "<group>"; };
 		1F6D925D2107C02A00BBD09D /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		1F6D925F2107C29600BBD09D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		1FB85F46211275890009E6DE /* CreateAnAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnAccountController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				1F3E00DF210BC1E1008FD368 /* Models */,
 				1F3E00DE210BC1CE008FD368 /* Storyboards */,
 				1FF01EC821066FCC00D9B1D3 /* AppDelegate.swift */,
+				1F5E0DD72118FF2000C4CAA6 /* s.xcassets */,
 				1FF01ED221066FD200D9B1D3 /* Assets.xcassets */,
 				1FF01ED721066FD200D9B1D3 /* Info.plist */,
 			);
@@ -298,6 +301,7 @@
 			files = (
 				1FF01ED621066FD200D9B1D3 /* LaunchScreen.storyboard in Resources */,
 				1FF01ED321066FD200D9B1D3 /* Assets.xcassets in Resources */,
+				1F5E0DD82118FF2000C4CAA6 /* s.xcassets in Resources */,
 				1FF01ECE21066FCC00D9B1D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

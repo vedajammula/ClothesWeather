@@ -48,8 +48,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
         textfield.inputAccessoryView = toolBar
     }
-    
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let fixedImageOrientation = fixOrientation(img: image)
@@ -63,13 +61,11 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         //    newImageObject.category = textfield.text
 //            newImageObject.image = imageData
 //            CoreDataHelper.save()
-            
         } else {
             //error message
         }
         self.dismiss(animated: true, completion: nil)
     }
-    
     private func fixOrientation(img: UIImage) -> UIImage {
         if (img.imageOrientation == UIImageOrientation.up) { return img }
         
@@ -82,7 +78,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
         return normalizedImage
     }
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -95,7 +90,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         image.allowsEditing = false
         self.present(image, animated: true, completion: nil)
     }
-    
     @IBAction func importImage(_ sender: Any) {
         
         let image = UIImagePickerController()

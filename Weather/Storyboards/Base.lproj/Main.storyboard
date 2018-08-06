@@ -276,21 +276,14 @@
                             <outlet property="delegate" destination="AsI-Bz-6fV" id="wqA-AR-7kv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weather" id="GaJ-Cl-EAX">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="le6-Jr-M5d">
-                            <connections>
-                                <segue destination="XTk-g8-rEF" kind="unwind" unwindAction="unwindFromWeather:" id="TvA-YE-kCa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Weather" id="GaJ-Cl-EAX"/>
                     <connections>
                         <outlet property="searchBar" destination="1gs-7p-H7j" id="8lS-Yj-E7l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWG-zX-DbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XTk-g8-rEF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="209"/>
+            <point key="canvasLocation" x="2716" y="170"/>
         </scene>
         <!--Outfit-->
         <scene sceneID="l9S-l5-Pds">
@@ -300,22 +293,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nO7-yf-MBH">
-                                <rect key="frame" x="141" y="138" width="207" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-0u-hif">
-                                <rect key="frame" x="141" y="367" width="207" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zg-uU-6WC">
-                                <rect key="frame" x="13" y="396" width="120" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAT-mH-ufA">
-                                <rect key="frame" x="13" y="206" width="120" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dex-io-5BG">
                                 <rect key="frame" x="38" y="126" width="70" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -329,15 +306,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-jL-3RR">
+                                <rect key="frame" x="19" y="224" width="108" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hHc-lX-efL">
+                                <rect key="frame" x="135" y="183" width="224" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2o-eH-NDk">
+                                <rect key="frame" x="135" y="383" width="224" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-GF-hk7">
+                                <rect key="frame" x="16" y="404" width="108" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qSa-Tg-u6l"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Outfit" id="I6C-g6-40Y"/>
+                    <tabBarItem key="tabBarItem" title="Outfit" image="hanger" id="I6C-g6-40Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovI-Gv-Y4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4254" y="904"/>
+            <point key="canvasLocation" x="4253.6000000000004" y="903.59820089955031"/>
         </scene>
         <!--Create Closet-->
         <scene sceneID="8R9-tq-uDb">
@@ -384,10 +377,10 @@
                                     <action selector="takePhoto:" destination="ZCv-52-iMN" eventType="touchUpInside" id="fR2-Hf-pzX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-cY-Duv">
-                                <rect key="frame" x="16" y="81" width="343" height="262"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-cY-Duv">
+                                <rect key="frame" x="16" y="81" width="343" height="249"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="262" id="MMt-ZZ-VIn"/>
+                                    <constraint firstAttribute="height" constant="249" id="MMt-ZZ-VIn"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -399,7 +392,7 @@
                             <constraint firstItem="JYR-4G-Ay2" firstAttribute="centerX" secondItem="Oyl-cY-Duv" secondAttribute="centerX" id="ETx-t8-gCn"/>
                             <constraint firstItem="JYR-4G-Ay2" firstAttribute="top" secondItem="M1S-iH-AeX" secondAttribute="bottom" constant="48" id="Enq-k4-adb"/>
                             <constraint firstItem="mho-Jq-9Sl" firstAttribute="leading" secondItem="HqV-iH-eKG" secondAttribute="leading" constant="8" id="HmK-s8-6Nr"/>
-                            <constraint firstItem="ScC-Rb-fAv" firstAttribute="top" secondItem="Oyl-cY-Duv" secondAttribute="bottom" constant="31" id="HvV-40-71j"/>
+                            <constraint firstItem="ScC-Rb-fAv" firstAttribute="top" secondItem="Oyl-cY-Duv" secondAttribute="bottom" constant="44" id="HvV-40-71j"/>
                             <constraint firstItem="HqV-iH-eKG" firstAttribute="bottom" secondItem="mho-Jq-9Sl" secondAttribute="bottom" constant="26" id="NtJ-tg-Aqe"/>
                             <constraint firstItem="JYR-4G-Ay2" firstAttribute="centerX" secondItem="M1S-iH-AeX" secondAttribute="centerX" id="Pu0-jE-5yp"/>
                             <constraint firstItem="HqV-iH-eKG" firstAttribute="trailing" secondItem="mho-Jq-9Sl" secondAttribute="trailing" constant="8" id="Q2O-lU-3CX"/>
@@ -590,7 +583,7 @@
         <scene sceneID="EBK-gf-zDK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ug5-CD-pk8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="EaJ-jZ-QFC"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="EaJ-jZ-QFC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u3f-59-RKH">
@@ -626,9 +619,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="112" height="112"/>
+        <image name="camera" width="873" height="666"/>
+        <image name="hanger" width="50" height="26"/>
+        <image name="home" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vL9-9n-X1c"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.64941303064528388" green="0.56109692888165374" blue="0.70580653739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

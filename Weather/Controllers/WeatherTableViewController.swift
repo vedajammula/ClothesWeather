@@ -12,35 +12,10 @@ import CoreData
 
 
 class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
-    //    @IBAction func unwindFromWeather(_ sender: UIStoryboardSegue)
-    //
-    //    if sender.source is HomePageViewController {
-    //         if let senderVC = sender.source as? HomePageViewController
-    //
-    //    }
+
+    var locManager = CLLocationManager()
+
     
-    //    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
-    //       let data = CoreDataHelper.retrieveData()
-    //    }
-    //
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let identifier = segue.identifier else { return }
-    //
-    //        switch identifier {
-    //        case "displayData":
-    //            // guard let indexPath = tableView.indexPathForSelectedRow else { return }
-    //
-    //            // 2
-    //            let d = x        // data[indexPath.row]
-    //            // 3
-    //            let destination = segue.destination as! HomePageViewController
-    //            // 4
-    //            destination.data = d
-    //
-    //        default:
-    //            print("unexpected segue identifier")
-    //        }
-    //    }
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -51,8 +26,20 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            currentLocation = locManager.location
+            if let location = currentLocation {
+                weatherForLocation(location: location)
+            }
+            
+        }
+        
         searchBar.delegate = self
-        updateWeatherForLocation(location: "Find Your City")
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -82,6 +69,18 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate {
         }
         
     }
+    
+    func weatherForLocation(location: CLLocation) {
+        Weather.forecast(withLocation: location.coordinate, completion: { (results: [Weather]?) in
+            if let weatherData = results {
+                self.forecastData = weatherData
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
