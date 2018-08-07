@@ -298,6 +298,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButton:" destination="uIk-Di-3ij" eventType="touchUpInside" id="EaW-0I-O1t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Outfit!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6g-8T-agz">
                                 <rect key="frame" x="128" y="54" width="128" height="32"/>
@@ -319,7 +322,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-GF-hk7">
-                                <rect key="frame" x="16" y="404" width="108" height="111"/>
+                                <rect key="frame" x="16" y="464" width="108" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZY4-AC-Vim">
+                                <rect key="frame" x="19" y="343" width="108" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -329,6 +336,7 @@
                     <tabBarItem key="tabBarItem" title="Outfit" image="hanger" id="I6C-g6-40Y"/>
                     <connections>
                         <outlet property="bottomImageView" destination="O2o-eH-NDk" id="Cpu-AO-c3Y"/>
+                        <outlet property="jacketImageView" destination="ZY4-AC-Vim" id="CEA-Hn-POM"/>
                         <outlet property="jewlreyImageView" destination="wzs-jL-3RR" id="hdk-5q-nge"/>
                         <outlet property="otherImageView" destination="dTo-GF-hk7" id="N7D-OA-dPv"/>
                         <outlet property="topImageView" destination="hHc-lX-efL" id="o5u-WG-HBE"/>

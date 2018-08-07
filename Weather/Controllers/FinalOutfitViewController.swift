@@ -19,12 +19,12 @@ class FinalOutfitViewController: UIViewController {
     
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var bottomImageView: UIImageView!
-    
+    @IBOutlet weak var jacketImageView: UIImageView!
     @IBOutlet weak var jewlreyImageView: UIImageView!
     @IBOutlet weak var otherImageView: UIImageView!
-    
-    
-    
+    @IBAction func refreshButton(_ sender: Any) {
+        checkTemperature()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +40,11 @@ class FinalOutfitViewController: UIViewController {
             }
         }
         images = CoreDataHelper.retrieveImages()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.checkTemperature()
     }
-    
     func weatherForLocation(location: CLLocation) {
         Weather.forecast(withLocation: location.coordinate, completion: { (results: [Weather]?) in
             if let weatherData = results {
@@ -58,33 +56,77 @@ class FinalOutfitViewController: UIViewController {
             }
         })
     }
+    
     func checkTemperature() {
         guard let temp = temp else { return }
         
-        // sweather range
-        if temp < 100.0 && temp > 40.0 {
+        // top range
+        if temp > 0.0 && temp < 70.0 {
             let top = CoreDataHelper.retrieveImages()
-            let sweater = top.filter({$0.category == "Sweater"})
-            if !sweater.isEmpty{
-            let index = arc4random_uniform(UInt32(sweater.count))
-            let imageData = sweater[Int(index)]
+            let clothing = top.filter({$0.category == "Sweater" || $0.category == "Shirt"})
+            if !clothing.isEmpty{
+            let index = arc4random_uniform(UInt32(clothing.count))
+            let imageData = clothing[Int(index)]
                 let image = UIImage(data: imageData.image!)
                 topImageView.image = image
             }
-            
-            else {
-                //create alert view
-            }
-            //display sweater image
-            //display jeans image
+        
         }
- //       else if {}
-    }
-   
-    
-    
-    
-    
-    
-}
+      else if temp > 70.0 {
+                let top = CoreDataHelper.retrieveImages()
+                let shirt = top.filter({$0.category == "Shirt"})
+                if !shirt.isEmpty{
+                    let index = arc4random_uniform(UInt32(shirt.count))
+                    let imageData = shirt[Int(index)]
+                    let image = UIImage(data: imageData.image!)
+                    topImageView.image = image
+                }
+            
+        }
+        
+        if temp > 0.0 && temp < 80.0 {
+            let bottom = CoreDataHelper.retrieveImages()
+            let jeans = bottom.filter({$0.category == "Jeans" || $0.category == "Leggings"})
+            if !jeans.isEmpty{
+                let index = arc4random_uniform(UInt32(jeans.count))
+                let imageData = jeans[Int(index)]
+                let image = UIImage(data: imageData.image!)
+                bottomImageView.image = image
+            }
 
+        }
+        else if temp > 80.0 {
+            let bottom = CoreDataHelper.retrieveImages()
+           let shorts = bottom.filter({$0.category == "Shorts"})
+            if !shorts.isEmpty{
+                let index = arc4random_uniform(UInt32(shorts.count))
+                let imageData = shorts[Int(index)]
+                let image = UIImage(data: imageData.image!)
+                bottomImageView.image = image
+            }
+
+        }
+        if temp > 0.0{
+            let feet = CoreDataHelper.retrieveImages()
+            let shoes = feet.filter({$0.category == "Shoes"})
+            if !shoes.isEmpty{
+                let index = arc4random_uniform(UInt32(shoes.count))
+                let imageData = shoes[Int(index)]
+                let image = UIImage(data: imageData.image!)
+                otherImageView.image = image
+            }
+        
+    }
+        if temp > 0.0 {
+            let fashion = CoreDataHelper.retrieveImages()
+            let jewlrey = fashion.filter({$0.category == "Jewlrey"})
+            if !jewlrey.isEmpty{
+                let index = arc4random_uniform(UInt32(jewlrey.count))
+                let imageData = jewlrey[Int(index)]
+                let image = UIImage(data: imageData.image!)
+                jewlreyImageView.image = image
+            }
+    
+    }
+}
+}

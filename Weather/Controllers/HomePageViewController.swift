@@ -20,7 +20,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     var editModeOn: Bool = false
-    var categoriesArray = ["Shirt", "Sweater" , "Shorts", "Jeans", "Dress", "Jewlrey", "Shoes", "Other"]
+    var categoriesArray = ["Shirt", "Sweater" , "Shorts", "Jeans","Leggings","Jacket", "Dress", "Jewlrey", "Shoes", "Other"]
     var picker = UIPickerView()
     
     func filterImagesFromSelectedCategory() {
