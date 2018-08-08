@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,24 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="launchicon" translatesAutoresizingMaskIntoConstraints="NO" id="Z6G-kQ-efw">
-                                <rect key="frame" x="16" y="269" width="343" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-Q8-JSi">
+                                <rect key="frame" x="37" y="23" width="322" height="644"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Closet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LND-TA-tHz">
-                                <rect key="frame" x="88" y="179" width="199" height="54"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LND-TA-tHz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="1Lq-rQ-tbs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z6G-kQ-efw" secondAttribute="bottom" constant="98" id="Jyn-4b-wHV"/>
-                            <constraint firstItem="LND-TA-tHz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="159" id="ahj-hI-I4l"/>
-                            <constraint firstItem="Z6G-kQ-efw" firstAttribute="top" secondItem="LND-TA-tHz" secondAttribute="bottom" constant="36" id="d5C-G5-qF2"/>
-                            <constraint firstItem="Z6G-kQ-efw" firstAttribute="centerX" secondItem="LND-TA-tHz" secondAttribute="centerX" id="dEQ-Er-N9B"/>
-                            <constraint firstItem="Z6G-kQ-efw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="q4l-06-DEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gHC-Q8-JSi" secondAttribute="trailing" constant="16" id="Heq-Aj-Nmu"/>
+                            <constraint firstItem="gHC-Q8-JSi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="yos-35-piD"/>
+                            <constraint firstItem="gHC-Q8-JSi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="ysQ-YA-KcH"/>
+                            <constraint firstItem="gHC-Q8-JSi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zVP-wh-Z1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchicon" width="110" height="58"/>
+        <image name="loading" width="381" height="358"/>
     </resources>
 </document>

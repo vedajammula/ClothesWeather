@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+
 class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - Properties
@@ -20,7 +21,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     var editModeOn: Bool = false
-    var categoriesArray = ["Shirt", "Sweater" , "Shorts", "Jeans","Leggings","Jacket", "Dress", "Jewlrey", "Shoes", "Other"]
+    var categoriesArray = ["Shirt", "Sweater" , "Shorts", "Jeans","Leggings","Jacket", "Dress", "Jewelry", "Shoes", "Other"]
     var picker = UIPickerView()
     
     func filterImagesFromSelectedCategory() {
@@ -37,7 +38,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         clothesForCategory = filteredArray
     }
-    
+  
     @objc func dismissKeyboard() {
         view.endEditing(true)
         
@@ -81,42 +82,15 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return categoriesArray[row]
     }
-    
-    // create segue
-    // if temperature > 70 {
-    // display object from categoriesArray into the UiImage in Your Outfit View Controller
-    // else if temperature < 80 {
-    // display sweater object from categoriesArray into the UIImage in Your OUtfit View Controller
-//     
-//
-//
-//
-//
-//
-    //}
-    
-    
-    
-    
 
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var textFieldPicker: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-//    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
-//
-//    }
+
     
     // MARK: - View Life Cycle Methods
-   
-//    override func viewDidLoad() {
-//
-//        super.viewDidLoad()
-//
-//    }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -138,17 +112,11 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         //addButtonBarItem.isEnabled = !editing
         editModeOn = !editModeOn
         collectionView.reloadData()
-//        if let indexPaths = collectionView?.indexPathsForVisibleItems {
-//            for indexPath in indexPaths {
-//                if let cell = collectionView?.cellForItem(at: indexPath) as! ImageCollectionViewCell? {
-//                    cell.isEditing = editing
-//                }
-//            }
-//        }
     }
     
     // MARK: - IBActions
 }
+
 
 // MARK: - CollectionView Delegate & DataSource Methods
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -181,13 +149,6 @@ extension HomePageViewController : ImageCollectionViewCellDelegate {
     
     }
     
-//    func delete(cell: ImageCollectionViewCell) {
-//        if let indexPath = collectionView?.indexPath(for: cell) {
-//       //     photoCategories[indexPath.section].imageNames
-//
-//            collectionView?.deleteItems(at: [indexPath])
-//        }
-//    }
 }
 
 

@@ -17,17 +17,26 @@ class FinalOutfitViewController: UIViewController {
     var locManager = CLLocationManager()
     var images = [ImageWithAttributes]()
     
+    @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var jacketImageView: UIImageView!
-    @IBOutlet weak var jewlreyImageView: UIImageView!
+    @IBOutlet weak var jewelryImageView: UIImageView!
     @IBOutlet weak var otherImageView: UIImageView!
     @IBAction func refreshButton(_ sender: Any) {
         checkTemperature()
     }
+    @IBAction func weatherScreen(_ sender: UIBarButtonItem) {
+    }
     
+    func setupView() {
+        refreshButton.layer.cornerRadius = 14
+        refreshButton.layer.masksToBounds = true
+   
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!
         
@@ -119,12 +128,23 @@ class FinalOutfitViewController: UIViewController {
         }
         if temp > 0.0 {
             let fashion = CoreDataHelper.retrieveImages()
-            let jewlrey = fashion.filter({$0.category == "Jewlrey"})
-            if !jewlrey.isEmpty{
-                let index = arc4random_uniform(UInt32(jewlrey.count))
-                let imageData = jewlrey[Int(index)]
+            let jewelry = fashion.filter({$0.category == "Jewelry"})
+            if !jewelry.isEmpty{
+                let index = arc4random_uniform(UInt32(jewelry.count))
+                let imageData = jewelry[Int(index)]
                 let image = imageData.image
-                jewlreyImageView.image = image
+                jewelryImageView.image = image
+            }
+            
+        }
+        if temp > 0.0 && temp < 75{
+            let overall = CoreDataHelper.retrieveImages()
+            let jacket = overall.filter({$0.category == "Jacket"})
+            if !jacket.isEmpty{
+                let index = arc4random_uniform(UInt32(jacket.count))
+                let imageData = jacket[Int(index)]
+                let image = imageData.image
+                jacketImageView.image = image
             }
             
         }

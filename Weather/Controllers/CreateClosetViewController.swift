@@ -18,7 +18,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     // MARK: - Properties
     var receivedImage : UIImage?
     var selectedPriority : String?
-    var priorityTypes = ["Shirt", "Sweater" , "Jacket", "Shorts", "Leggings", "Jeans", "Dress", "Jewlrey", "Shoes"]
+    var priorityTypes = ["", "Shirt", "Sweater" , "Jacket", "Shorts", "Leggings", "Jeans", "Dress", "Jewelry", "Shoes"]
     
 
     // MARK: - View Life Cycle Methods
@@ -27,6 +27,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         super.viewDidLoad()
         createPickerView()
         dismissPickerView()
+        setupView()
     }
     // MARK: - Methods
     
@@ -97,6 +98,16 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         image.allowsEditing = false
         self.present(image, animated: true)
+    }
+    @IBOutlet weak var roundedCorner: UIButton!
+    
+    @IBOutlet weak var importClothingCorner: UIButton!
+    func setupView() {
+        roundedCorner.layer.cornerRadius = 14
+        roundedCorner.layer.masksToBounds = true
+        importClothingCorner.layer.cornerRadius = 14
+        importClothingCorner.layer.masksToBounds = true
+        
     }
     @IBAction func addToCloset(_ sender: Any) {
         
