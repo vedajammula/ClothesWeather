@@ -128,7 +128,7 @@ class FinalOutfitViewController: UIViewController {
         }
         if temp > 0.0 {
             let fashion = CoreDataHelper.retrieveImages()
-            let jewelry = fashion.filter({$0.category == "Jewelry"})
+            let jewelry = fashion.filter({$0.category == "Accessories"})
             if !jewelry.isEmpty{
                 let index = arc4random_uniform(UInt32(jewelry.count))
                 let imageData = jewelry[Int(index)]

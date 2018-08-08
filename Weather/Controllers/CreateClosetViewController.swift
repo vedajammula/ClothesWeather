@@ -18,7 +18,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     // MARK: - Properties
     var receivedImage : UIImage?
     var selectedPriority : String?
-    var priorityTypes = ["", "Shirt", "Sweater" , "Jacket", "Shorts", "Leggings", "Jeans", "Dress", "Jewelry", "Shoes"]
+    var priorityTypes = ["", "Shirt", "Sweater" , "Jacket", "Shorts", "Leggings", "Jeans", "Dress", "Accessories", "Shoes"]
     
 
     // MARK: - View Life Cycle Methods
