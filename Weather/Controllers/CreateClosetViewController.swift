@@ -108,10 +108,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             //            let alert
         } else {
             let newImage = CoreDataHelper.newImage()
-            guard let imageData = receivedImage!.png else {
-                fatalError("failed to convert receivedImage into data")
-            }
-            newImage.image = imageData
+            newImage.image = receivedImage!
             newImage.category = selectedPriority!
 
             CoreDataHelper.save()
@@ -156,15 +153,3 @@ extension UIImage {
         return UIImagePNGRepresentation(self)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -160,7 +160,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
         cell.isEditing = self.editModeOn
-        cell.imageView.image = UIImage(data: clothesForCategory[indexPath.row].image!)
+        cell.imageView.image = clothesForCategory[indexPath.row].image
         // Cell imageview content mode down below
         cell.imageView.contentMode = .scaleAspectFill
         cell.indexPath = indexPath

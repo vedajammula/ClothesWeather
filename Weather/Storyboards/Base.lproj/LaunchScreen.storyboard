@@ -36,7 +36,6 @@
                             <constraint firstItem="LND-TA-tHz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="159" id="ahj-hI-I4l"/>
                             <constraint firstItem="Z6G-kQ-efw" firstAttribute="top" secondItem="LND-TA-tHz" secondAttribute="bottom" constant="36" id="d5C-G5-qF2"/>
                             <constraint firstItem="Z6G-kQ-efw" firstAttribute="centerX" secondItem="LND-TA-tHz" secondAttribute="centerX" id="dEQ-Er-N9B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LND-TA-tHz" secondAttribute="trailing" constant="88" id="gUQ-Jh-Rsb"/>
                             <constraint firstItem="Z6G-kQ-efw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="q4l-06-DEa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
