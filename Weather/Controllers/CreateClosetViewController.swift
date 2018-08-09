@@ -23,7 +23,8 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
 
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
-        
+        myImageView.layer.cornerRadius = 4
+        myImageView.layer.masksToBounds = true
         super.viewDidLoad()
         createPickerView()
         dismissPickerView()

@@ -36,6 +36,21 @@ class FinalOutfitViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        topImageView.layer.cornerRadius = 7.5
+        topImageView.layer.masksToBounds = true
+        
+        bottomImageView.layer.cornerRadius = 7.5
+        bottomImageView.layer.masksToBounds = true
+        
+        jacketImageView.layer.cornerRadius = 7.5
+        jacketImageView.layer.masksToBounds = true
+        
+        jewelryImageView.layer.cornerRadius = 7.5
+        jewelryImageView.layer.masksToBounds = true
+        
+        otherImageView.layer.cornerRadius = 7.5
+        otherImageView.layer.masksToBounds = true
+        
         setupView()
         locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!

@@ -51,6 +51,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dismissPickerView()
         picker.delegate = self
         picker.dataSource = self
@@ -66,6 +67,7 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         textFieldPicker.inputAccessoryView = toolBar
     }
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -88,7 +90,8 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var textFieldPicker: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    
     
     // MARK: - View Life Cycle Methods
 

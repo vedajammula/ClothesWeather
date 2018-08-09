@@ -21,9 +21,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     var indexPath: IndexPath?
     
     @IBOutlet weak var deleteButton: UIButton!
-    
-    
-    
+
     @IBAction func deleteButtonDidTap(_ sender: Any) {
         
         delegate?.delete(indexPath: indexPath!)
@@ -31,6 +29,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var deleteButtonBackgroundView: UIVisualEffectView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    func viewDidLoad() {
+        setupView()
+    }
+
+    func setupView() {
+        self.imageView.image =  UIImage(named:"imageView")
+        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
+        self.imageView.clipsToBounds = true
+    }
     
     weak var delegate: ImageCollectionViewCellDelegate?
     
