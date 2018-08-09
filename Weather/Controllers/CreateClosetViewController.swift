@@ -29,7 +29,10 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         createPickerView()
         dismissPickerView()
         setupView()
+        
     }
+    
+ 
     // MARK: - Methods
     
     func createPickerView() {
@@ -56,13 +59,7 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             
             myImageView.image = fixedImageOrientation
             receivedImage = fixedImageOrientation
-            
-//            let newImageObject = CoreDataHelper.newImage()
-//           let imageData = UIImagePNGRepresentation(image)
-//            newImageObject.image = fixedImageOrientation.png
-        //    newImageObject.category = textfield.text
-//            newImageObject.image = imageData
-//            CoreDataHelper.save()
+        
         } else {
             //error message
         }
@@ -124,8 +121,6 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
             newImage.category = selectedPriority!
 
             CoreDataHelper.save()
-            //   self.performSegue(withIdentifier: "addToClosetSegue", sender: nil)
-            //        presentingViewController?.dismiss(animated: true, completion: nil)
             self.navigationController?.popViewController(animated: true)
             print("Pressed Add to Closet")
         }

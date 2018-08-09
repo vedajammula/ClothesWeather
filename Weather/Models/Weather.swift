@@ -86,10 +86,12 @@ struct Weather: Codable {
         UserDefaults.standard.setValue(weatherData, forKey: "Weather")
     }
     static var current:  Weather?  {
-        if UserDefaults.standard.value(forKey: "Weather") != nil{
-        let weatherData = UserDefaults.standard.value(forKey: "Weather") as! Data
-        let weather = try! JSONDecoder().decode(Weather.self, from: weatherData)
-        return weather
+        
+        
+        if UserDefaults.standard.value(forKey: "Weather") != nil {
+            let weatherData = UserDefaults.standard.value(forKey: "Weather") as! Data
+            let weather = try! JSONDecoder().decode(Weather.self, from: weatherData)
+            return weather
         }
         else{
             return nil

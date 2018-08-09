@@ -13,7 +13,6 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     // MARK: - Properties
     var imageObjects = [ImageWithAttributes]()
-    
     var clothesForCategory = [ImageWithAttributes]() { // new datasource for collectionView
         didSet{
             collectionView.reloadData()
@@ -27,7 +26,6 @@ class HomePageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func filterImagesFromSelectedCategory() {
         // filter  items in imageObjects and append them into the collectionview Array (clothes for category)
         guard textFieldPicker.text!.isEmpty == false else { return }
-        
         let selectedCategory = picker.selectedRow(inComponent: 0)
         var filteredArray = [ImageWithAttributes]()
         for data in imageObjects {

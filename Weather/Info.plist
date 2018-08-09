@@ -8,6 +8,10 @@
 	<string>HotCloset</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -25,9 +29,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Your photos are safe to access!</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>Your location is being used to check the weather</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Your location is being used to check the weather</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Your photos are safe to use in this app!</string>
 	<key>UILaunchStoryboardName</key>
@@ -41,8 +45,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

@@ -13,7 +13,7 @@ import CoreLocation
 
 class FinalOutfitViewController: UIViewController {
     var currentWeather: Weather?
-    let temp = Weather.current?.temperature
+    var temp : Double!
     var locManager = CLLocationManager()
     var images = [ImageWithAttributes]()
     
@@ -32,10 +32,12 @@ class FinalOutfitViewController: UIViewController {
     func setupView() {
         refreshButton.layer.cornerRadius = 14
         refreshButton.layer.masksToBounds = true
-   
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
         topImageView.layer.cornerRadius = 7.5
         topImageView.layer.masksToBounds = true
         
@@ -63,11 +65,12 @@ class FinalOutfitViewController: UIViewController {
                 weatherForLocation(location: location)
             }
         }
-        images = CoreDataHelper.retrieveImages()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.checkTemperature()
+          images = CoreDataHelper.retrieveImages()
+            self.checkTemperature()
     }
     func weatherForLocation(location: CLLocation) {
         Weather.forecast(withLocation: location.coordinate, completion: { (results: [Weather]?) in
@@ -76,12 +79,30 @@ class FinalOutfitViewController: UIViewController {
                 DispatchQueue.main.async {
                     //      self.tableView.reloadData()
                     print(self.currentWeather!)
+                    Weather.setCurrentWeather(weather: self.currentWeather!)
+                    self.checkTemperature()
                 }
             }
         })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Weather.current != nil{
+        self.checkTemperature()
+        }else{
+              var currentLocation: CLLocation!
+            currentLocation = locManager.location
+            if let location = currentLocation {
+                weatherForLocation(location: location)
+            }
+        }
+        
+    }
+    
     func checkTemperature() {
+        temp = Weather.current?.temperature
         guard let temp = temp else { return }
         
         // top range
@@ -107,7 +128,6 @@ class FinalOutfitViewController: UIViewController {
             }
             
         }
-        
         if temp > 0.0 && temp < 80.0 {
             let bottom = CoreDataHelper.retrieveImages()
             let jeans = bottom.filter({$0.category == "Jeans" || $0.category == "Leggings"})
@@ -161,8 +181,8 @@ class FinalOutfitViewController: UIViewController {
                 let image = imageData.image
                 jacketImageView.image = image
             }
-            
         }
     }
+   
 }
 
