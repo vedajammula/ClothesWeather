@@ -12,6 +12,9 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var hiddenMessage: UILabel!
+    
+    
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var textfield: UITextField!
     
@@ -19,6 +22,10 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
     var receivedImage : UIImage?
     var selectedPriority : String?
     var priorityTypes = ["", "Shirt", "Sweater" , "Jacket", "Shorts", "Leggings", "Jeans", "Dress", "Accessories", "Shoes"]
+    
+    
+    
+    
     
 
     // MARK: - View Life Cycle Methods
@@ -111,11 +118,14 @@ class CreateClosetViewController: UIViewController, UINavigationControllerDelega
         
         if receivedImage == nil {
             //TODO: use this class, UIAlertController, to send a message to the user
-//            let alert
+            hiddenMessage.alpha = 1
         } else if selectedPriority == nil {
             //TODO: use this class, UIAlertController, to send a message to the user
-            //            let alert
+                hiddenMessage.alpha = 1
+            
         } else {
+            hiddenMessage.alpha = 0
+
             let newImage = CoreDataHelper.newImage()
             newImage.image = receivedImage!
             newImage.category = selectedPriority!
