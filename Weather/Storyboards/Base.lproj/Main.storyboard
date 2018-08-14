@@ -624,7 +624,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e7M-p4-7S9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home " id="0C8-BD-WKp">
+                    <navigationItem key="navigationItem" title="Closet" id="0C8-BD-WKp">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="VcE-wC-brK">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -660,11 +660,11 @@
             </objects>
             <point key="canvasLocation" x="2957" y="396"/>
         </scene>
-        <!--Home-->
+        <!--Closet-->
         <scene sceneID="EBK-gf-zDK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ug5-CD-pk8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="EaJ-jZ-QFC"/>
+                    <tabBarItem key="tabBarItem" title="Closet" image="home" id="EaJ-jZ-QFC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u3f-59-RKH">
